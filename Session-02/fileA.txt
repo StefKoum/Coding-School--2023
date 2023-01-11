@@ -1,0 +1,2 @@
+Sample initial content for file A.
+Some new content is added to the file A
