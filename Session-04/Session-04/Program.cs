@@ -52,7 +52,7 @@ Console.WriteLine("  -Minutes, \n  -Hours, \n  -Days");
 // - Minutes,
 // - Hours,
 // - Days,
-int seconds = 45678;
+int seconds = 456787364;
 int seconds2 = seconds;
 
 int days = seconds / ((60 * 60) * 24);
