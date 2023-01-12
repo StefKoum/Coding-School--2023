@@ -66,7 +66,7 @@ seconds %= (60 * 60);
 
 seconds %= 60;
 Console.WriteLine(seconds2 + " seconds when converted result in: " + days + " day(s) " + hours + " hours " + minutes + " minutes and " + seconds + " seconds");
-Console.WriteLine(seconds2 + " seconds are equivalent to: " + (days / 365) + " year(s) or " + days + " day(s) or " + hours + " hours or " + minutes + " minutes.");
+Console.WriteLine(seconds2 + " seconds are equivalent to: " + (days / 365) + " year(s) or " + (seconds2 / (3600 * 24)) + " day(s) or " + (seconds2 / (60 * 60)) + " hours or " + (seconds2/60) + " minutes.");
 
 
 
