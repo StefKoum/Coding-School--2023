@@ -1,55 +1,54 @@
 ﻿/********************
 * Main Program
 *********************/
+
 using System.Text;
 
-Console.WriteLine("Exercise 2. Write a C# program that asks the user for an integer (n) and gives\nthem the possibility to choose between computing the sum or the product of 1, ... , n\n");
+Console.WriteLine("Exercise 1. Write a C# program that reverses a given string (your name)\n");
+string myName = "Stefanos";
+Console.WriteLine($"My name is {myName} and my name reversed is {reverseString(myName)}.");
+
+
+
+Console.WriteLine("\n\n\nExercise 2. Write a C# program that asks the user for an integer (n) and gives\nthem the possibility to choose between computing the sum or the product of 1, ... , n\n");
 Console.WriteLine($"The result of the chosen operation is {chooseOperation()}.");
 
 
 
-Console.WriteLine("\n\nExercise 3. Write a C# program that asks the user for an integer (n) and finds all the prime numbers from 1 to n\n");
+Console.WriteLine("\n\n\nExercise 3. Write a C# program that asks the user for an integer (n) and finds all the prime numbers from 1 to n\n");
 int userNumber = getPositiveIntegerInput();
 Console.WriteLine($"Prime numbers up to {userNumber} are:");
 printPrimesUpToNumber(userNumber);
 
 
 
-Console.WriteLine("\n\nExercise 1. Write a C# program that reverses a given string (your name)\n");
-string myName = "Stefanos";
-Console.WriteLine($"My name is {myName} and my name reversed is {reverseString(myName)}.");
+Console.WriteLine("\n\n\nPress any key to see the 2 remaining exercises...");
+Console.ReadLine();
 
 
 
-Console.WriteLine("\n\nExercise 4. Write a C# Program to multiply all the values from Array1 with all values from Array2 and display the results in a new Array");
+Console.WriteLine("\n\n\nExercise 4. Write a C# Program to multiply all the values from Array1\nwith all values from Array2 and display the results in a new Array");
 Console.WriteLine("- Array1: [2, 4, 9, 12]");
 Console.WriteLine("- Array2: [1, 3, 7, 10]\n");
 int[] firstArray = new int[] { 2, 4, 9, 12 };
 int[] secondArray = new int[] { 1, 3, 7, 10 };
-Console.WriteLine("The final array after the multiplication of all the elements\nof the two arrays above, will contain the following elements:");
-printArrElements(multiplyTwoArrays(firstArray, secondArray));
+Console.WriteLine($"The initial arrays, the elements of which we want to multiply:");
+Console.WriteLine($"{stringifyArrayOfInts(firstArray)} and {stringifyArrayOfInts(secondArray)}");
+Console.WriteLine("\nThe produced array after the multiplication of all the elements of the two arrays above:");
+Console.WriteLine(stringifyArrayOfInts(multiplyTwoArrays(firstArray, secondArray)));
 
 
 
-Console.WriteLine("\n\nExercise 5. Write a C# program to sort the given array of integers from the lowest to the highest number");
+Console.WriteLine("\n\n\nExercise 5. Write a C# program to sort the given array of integers from the lowest to the highest number");
 Console.WriteLine("- Array: [0, -2, 1, 20, -31, 50, -4, 17, 89, 100]\n");
-int[] arrayToBeSorted = new int[] { 0, -2, 1, 20, -31, 50, -4, 17, 89, 100 };
-Console.WriteLine("The elements of the initial array:");
-Console.WriteLine("******");
-printArrElements(arrayToBeSorted);
-Console.WriteLine("******");
-Console.WriteLine("The elements of the sorted array:");
-printArrElements(arrayBubbleSortAscending(arrayToBeSorted));
+int[] arrayToSort = new int[] { 0, -2, 1, 20, -31, 50, -4, 17, 89, 100 };
+Console.WriteLine("The initial array:");
+Console.WriteLine(stringifyArrayOfInts(arrayToSort));
+Console.WriteLine("*** The sorted array: ***");
+Console.WriteLine(stringifyArrayOfInts(arrayBubbleSortAscending(arrayToSort)));
 
 Console.ReadLine();
 ////////////////////////
-
-
-
-
-
-
-
 
 
 
@@ -89,6 +88,18 @@ static void printArrElements(int[] inputArray)
         Console.WriteLine(element);
 }
 
+static string stringifyArrayOfInts(int[] inputArray)
+{
+    StringBuilder arrayString = new StringBuilder();
+    arrayString.Append("[ ");
+    for (int i = 0; i < inputArray.Length - 1; i++)
+    {
+        arrayString.Append($"{inputArray[i]}, ");
+    }
+    arrayString.Append($"{inputArray[inputArray.Length - 1]} ]");
+    return arrayString.ToString();
+}
+
 static int[] shallowArrayCopy(int[] inputArray)
 {
     int arrLength = inputArray.Length;
@@ -99,7 +110,7 @@ static int[] shallowArrayCopy(int[] inputArray)
     }
     return clonedArray;
 }
-////////////////////////////////////////
+/////////////////////////////////////
 
 
 
