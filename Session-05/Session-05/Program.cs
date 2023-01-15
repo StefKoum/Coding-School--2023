@@ -211,7 +211,7 @@ static int[] arrayBubbleSortAscending(int[] inputArray)
     {
         for (int j = 0; j < clonedArray.Length; j++)
         {
-            if (i != j && clonedArray[i] < clonedArray[j])
+            if (/*i != j &&*/ clonedArray[i] < clonedArray[j])
             {
                 int temporaryVar = clonedArray[i];
                 clonedArray[i] = clonedArray[j];
@@ -221,6 +221,37 @@ static int[] arrayBubbleSortAscending(int[] inputArray)
     }
     return clonedArray;
 }
+
+static int[] arrayInsertionSort(int[] inputArray)
+{
+    // Με τη συγκεκριμένη δομή ξεκινώ να ελέγχω από το τελευταίο στοιχείο
+    for (int i = 0; i < inputArray.Length; i++)
+    {
+        for (int j = inputArray.Length - 1; j > 0; j--)
+    // Εναλλακτικά η εκκίνηση θα μπορούσε να γίνει απευθείας από το 2ο στοιχείο ως εξής:
+    //for (int i = 1; ...) {
+        //for (int j = i; ...) {
+        {
+            if (inputArray[j] < inputArray[j - 1])
+            {
+                int temporaryVar = inputArray[j];
+                inputArray[j] = inputArray[j - 1];
+                inputArray[j - 1] = temporaryVar;
+            }
+        }
+    }
+    return inputArray;
+}
+
+//int[] arrayToSort = new int[] { 0, -2, 1, 20, -31, 50, -4, 17, 89, 100 };
+//Console.WriteLine(
+    //stringifyArrayOfInts(
+        //shallowArrayCopy(
+            //arrayInsertionSort(arrayToSort)
+        //)
+    //)
+//);
+
 ///////////////////////////////////////
 
 
