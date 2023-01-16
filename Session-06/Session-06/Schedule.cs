@@ -2,8 +2,8 @@
 
 public class Schedule
 {
-    public Guid Id { get; set; }
-    public Guid CourseId { get; set; }
-    public Guid ProfessorId { get; set; }
+    public Guid ID { get; set; }
+    public Guid CourseID { get; set; }
+    public Guid ProfessorID { get; set; }
     public DateTime Calendar { get; set; }
 }
