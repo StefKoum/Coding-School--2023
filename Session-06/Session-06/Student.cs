@@ -7,11 +7,11 @@ public class Student : Person
     public Course[]? Courses { get; set; }
 
     //Methods
-    public void Attend(string course, DateTime datetime)
+    public void Attend(Course[] course, DateTime datetime)
     {
     }
 
-    public void WriteExam(string course, DateTime datetime)
+    public void WriteExam(Course[] course, DateTime datetime)
     {
     }
 }
