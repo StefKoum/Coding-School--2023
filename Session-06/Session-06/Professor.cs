@@ -4,14 +4,14 @@ public class Professor : Person
 {
     public string? Rank { get; set; }
     public string? Name { get; set; }
-    public Course Course { get; set; }
+    public Course[]? Courses { get; set; }
 
     //Methods
     public void GetName()
     {
     }
 
-    public void Teach(Course[] course, DateTime datetime)
+    public void Teach(Course[] courses, DateTime datetime)
     {
     }
 
